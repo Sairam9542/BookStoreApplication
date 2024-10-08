@@ -13,6 +13,7 @@ public class MyBookListController {
 	@Autowired
 	private MyBookListService service;
 	
+	
 	@RequestMapping("/deleteMylist/{id}")
 	public String deleteMyList(@PathVariable("id") int id) {
 		service.deleteById(id);

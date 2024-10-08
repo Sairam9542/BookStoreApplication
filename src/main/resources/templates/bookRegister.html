@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeYZOS6s9mhR43Nm28psii4c_4weUDrstABg&s" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -10,11 +11,45 @@
 	crossorigin="anonymous">
 
 <title>Book Store</title>
+<style>
+body {
+	background-color: white;
+}
+
+.navbar {
+	background-color: black;
+}
+
+#navhover {
+	color: white;
+	position: relative;
+}
+
+#navhover::after {
+	content: " ";
+	position: absolute;
+	height: 2px;
+	width: 0;
+	left: 0;
+	top: 100%;
+	background: orange;
+	transition: 0.3s;
+}
+
+#navhover:hover {
+	color: #E4B1F0;
+}
+
+#navhover:hover::after {
+	width: 100%;
+}
+</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container-fluid">
-			<a class="navbar-brand text-white" href="#">Book Store</a>
+			<a class="navbar-brand" href="/"><img alt="book"
+				src="/images/bookstore.jpg" width="100px"></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -23,36 +58,38 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active text-white"
+					<li class="nav-item"><a id="navhover" class="nav-link active"
 						aria-current="page" href="/">Home</a></li>
-					<li class="nav-item"><a class="nav-link text-white"
+					<li class="nav-item"><a id="navhover" class="nav-link"
 						href="available_books">Available Books</a></li>
-					<li class="nav-item"><a class="nav-link text-white" href="my_books">My
-							Books</a></li>
+					<li class="nav-item"><a id="navhover" class="nav-link"
+						href="my_books">My Books</a></li>
 				</ul>
 				<div>
-					<a class="nav-link text-white" href="Book_Register">New Book
+					<a id="navhover" class="nav-link" href="Book_Register">New Book
 						Register</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<div class="container my-3 p-3" style="border:1px solid black">
+	<div class="container my-3 p-3" style="border: 1px solid black">
 		<h1 class="text-center my-3">New Book Register</h1>
 		<form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
 			<div class="mb-3">
-				<label for="name" class="form-label">Name
-					</label> <input type="text" class="form-control" name="name" required>	
+				<label for="name" class="form-label">Name </label> <input
+					type="text" class="form-control" name="name" required>
 			</div>
 			<div class="mb-3">
-				<label for="author" class="form-label">Author
-					</label> <input type="text" class="form-control" name="author" required>	
+				<label for="author" class="form-label">Author </label> <input
+					type="text" class="form-control" name="author" required>
 			</div>
 			<div class="mb-3">
-				<label for="name" class="form-label">Price
-					</label> <input type="text" class="form-control" name="price" required>	
+				<label for="name" class="form-label">Price </label> <input
+					type="text" class="form-control" name="price" required>
 			</div>
-			<center><button type="submit" class="btn btn-primary">Submit</button></center>
+			<center>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</center>
 		</form>
 
 
